@@ -44,14 +44,57 @@ function updatedRandomWord(){
 
 }
 
-var updatedword = updatedRandomWord(randomword) 
+
+function createDashes(){
+    n = randomword.length
+    var dashes = ""
+    for (let i = 0; i < n; i++){
+
+        dashes += "_" + " "
+    }
+
+    return dashes
+
+
+}
+
+var updatedword = updatedRandomWord() 
+var dash = createDashes()
+
+
+for (let i = 0; i < updatedword.length; i++){
+    letter = updatedword[i]
+
+    const letternode = document.createElement("p");
+    if (letter != " "){
+        letternode.setAttribute('style','border-bottom: 5px black solid; width:4em; text-align:center');
+    }
+    else{
+        letternode.setAttribute('style',' width:2em');
+
+    }
+    
+
+    const textnode = document.createTextNode(letter);
+    letternode.appendChild(textnode);
+    document.getElementById("answer-section").appendChild(letternode);
 
 
 
-const node = document.createElement("p");
-const textnode = document.createTextNode(updatedword);
-node.appendChild(textnode);
-document.getElementById("answer-section").appendChild(node);
+}
+
+
+
+
+
+
+const dashes = document.createElement("div");
+const textnode2 = document.createTextNode(dash);
+dashes.appendChild(textnode2);
+document.querySelector(".inputs-container").appendChild(dashes);
+
+
+
 
 
 
