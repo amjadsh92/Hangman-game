@@ -67,6 +67,7 @@ for (let i = 0; i < updatedword.length; i++){
 
     const letternode = document.createElement("p");
     if (letter != " "){
+        
         letternode.setAttribute('style','border-bottom: 5px black solid; width:4em; text-align:center');
     }
     else{
@@ -74,9 +75,11 @@ for (let i = 0; i < updatedword.length; i++){
 
     }
     
-
+    spannode = document.createElement("span");
     const textnode = document.createTextNode(letter);
-    letternode.appendChild(textnode);
+    spannode.appendChild(textnode);
+    letternode.appendChild(spannode);
+    spannode.style.visibility= "hidden"
     document.getElementById("answer-section").appendChild(letternode);
 
 
@@ -88,10 +91,6 @@ for (let i = 0; i < updatedword.length; i++){
 
 
 
-const dashes = document.createElement("div");
-const textnode2 = document.createTextNode(dash);
-dashes.appendChild(textnode2);
-document.querySelector(".inputs-container").appendChild(dashes);
 
 
 
