@@ -13,6 +13,8 @@ words = [
 'technology',
 ]
 
+alphabit="abcdefghigklmnopqrstuvwxyz"
+
 
 function randomWholeNum() {
 
@@ -45,21 +47,10 @@ function updatedRandomWord(){
 }
 
 
-function createDashes(){
-    n = randomword.length
-    var dashes = ""
-    for (let i = 0; i < n; i++){
 
-        dashes += "_" + " "
-    }
-
-    return dashes
-
-
-}
 
 var updatedword = updatedRandomWord() 
-var dash = createDashes()
+
 
 
 for (let i = 0; i < updatedword.length; i++){
@@ -78,9 +69,33 @@ for (let i = 0; i < updatedword.length; i++){
     spannode = document.createElement("span");
     const textnode = document.createTextNode(letter);
     spannode.appendChild(textnode);
+    
     letternode.appendChild(spannode);
-    spannode.style.visibility= "hidden"
+    spannode.style.visibility= "hidden";
+    if (letter != " "){
+        spannode.classList.add(letter)
+    }
+    
     document.getElementById("answer-section").appendChild(letternode);
+
+    for (let letter of alphabit){
+
+        var button = document.getElementById(letter);
+        //var lett = document.getElementById(letter).innerHTML
+        
+        button.addEventListener("click", function (){spannode = document.querySelector("." + letter)
+                                                     spannode.style.visibility = "visible"
+        } )
+
+
+    }
+
+
+    
+    
+
+
+
 
 
 
