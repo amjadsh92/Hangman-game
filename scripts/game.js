@@ -84,8 +84,21 @@ for (let i = 0; i < updatedword.length; i++){
         //var lett = document.getElementById(letter).innerHTML
         
         button.addEventListener("click", function (){spannode = document.querySelector("." + letter)
-                                                     spannode.style.visibility = "visible"
-        } )
+                                                    if (randomword.includes(letter)) {
+                                                      spannode.style.visibility = "visible"
+                                                    } 
+                                                    else{
+                                                        hanghead = document.getElementById("hang")
+                                                        headnode = document.createElement("img")
+                                                        headnode.setAttribute('src', "./assets/head.svg")
+                                                        headnode.setAttribute('class', "head")
+                                                        hanghead.appendChild(headnode)
+
+
+
+                                                    }
+                                                    })
+                                                   
 
 
     }
