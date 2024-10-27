@@ -52,6 +52,77 @@ function updatedRandomWord(){
 var updatedword = updatedRandomWord() 
 
 
+function hanghead (){
+
+    hanghead = document.getElementById("hang")
+    headnode = document.createElement("img")
+    headnode.setAttribute('src', "./assets/head.svg")
+    headnode.setAttribute('class', "head")
+    hanghead.appendChild(headnode)
+
+
+}
+
+
+function bodyhead (){
+
+    hanghead = document.getElementById("hang")
+    bodynode = document.createElement("img")
+    bodynode.setAttribute('src', "./assets/body.svg")
+    bodynode.setAttribute('class', "body")
+    hanghead.appendChild(bodynode)
+
+
+}
+
+
+function hangrighthand (){
+
+    hanghead = document.getElementById("hang")
+    righthandnode = document.createElement("img")
+    righthandnode.setAttribute('src', "./assets/right-hand.svg")
+    righthandnode.setAttribute('class', "right-hand")
+    hanghead.appendChild(righthandnode)
+
+
+}
+
+function hanglefthand (){
+
+    hanghead = document.getElementById("hang")
+    lefthandnode = document.createElement("img")
+    lefthandnode.setAttribute('src', "./assets/left-hand.svg")
+    lefthandnode.setAttribute('class', "left-hand")
+    hanghead.appendChild(lefthandnode)
+
+
+}
+
+
+function hangleftleg (){
+
+    hanghead = document.getElementById("hang")
+    leftlegnode = document.createElement("img")
+    leftlegnode.setAttribute('src', "./assets/left-leg.svg")
+    leftlegnode.setAttribute('class', "left-leg")
+    hanghead.appendChild(leftlegnode)
+
+
+}
+
+function hangrightleg (){
+
+    hanghead = document.getElementById("hang")
+    rightlegnode = document.createElement("img")
+    rightlegnode.setAttribute('src', "./assets/right-leg.svg")
+    rightlegnode.setAttribute('class', "right-leg")
+    hanghead.appendChild(rightlegnode)
+
+
+}
+
+
+
 
 for (let i = 0; i < updatedword.length; i++){
     letter = updatedword[i]
@@ -88,13 +159,12 @@ for (let i = 0; i < updatedword.length; i++){
                                                       spannode.style.visibility = "visible"
                                                     } 
                                                     else{
-                                                        hanghead = document.getElementById("hang")
-                                                        headnode = document.createElement("img")
-                                                        headnode.setAttribute('src', "./assets/head.svg")
-                                                        headnode.setAttribute('class', "head")
-                                                        hanghead.appendChild(headnode)
-
-
+                                                        hanghead()
+                                                        bodyhead()
+                                                        hangrighthand()
+                                                        hanglefthand()
+                                                        hangrightleg()
+                                                        hangleftleg()
 
                                                     }
                                                     })
